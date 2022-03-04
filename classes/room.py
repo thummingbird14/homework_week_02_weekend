@@ -9,10 +9,14 @@ class Room:
         return len(self.guests)
 
     def check_in_guest(self, guest):
-        self.guests.append(guest)
+        if len(self.guests) < self.capacity:
+            self.guests.append(guest)
 
     def check_out_guest(self, guest):
         self.guests.remove(guest)
 
+    def song_count(self):
+        return len(self.songs)
+
     def add_song(self, song):
-        pass
+        self.songs.append(song)
