@@ -12,7 +12,7 @@ class Room:
         self.guests.append(guest)
 
     def check_out_guest(self, guest):
-        pass
+        self.guests.remove(guest)
 
     def add_song(self, song):
         pass
