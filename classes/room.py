@@ -5,8 +5,11 @@ class Room:
         self.guests = []
         self.songs = []
 
+    def guest_count(self):
+        return len(self.guests)
+
     def check_in_guest(self, guest):
-        pass
+        self.guests.append(guest)
 
     def check_out_guest(self, guest):
         pass
