@@ -11,6 +11,7 @@ class Room:
     def check_in_guest(self, guest):
         if len(self.guests) < self.capacity:
             self.guests.append(guest)
+            guest.wallet -= 10.00
 
     def check_out_guest(self, guest):
         self.guests.remove(guest)

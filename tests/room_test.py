@@ -7,12 +7,12 @@ class TestRoom(unittest.TestCase):
     
     def setUp(self):
         self.room_1 = Room(1,5)
-        self.guest_1 = Guest("Tanya")
-        self.guest_2 = Guest("Cordii")
-        self.guest_3 = Guest("Stephanie")
-        self.guest_4 = Guest("Eli")
-        self.guest_5 = Guest("Kevin")
-        self.guest_6 = Guest("Annika")
+        self.guest_1 = Guest("Tanya", 50.00)
+        self.guest_2 = Guest("Cordii", 40.00)
+        self.guest_3 = Guest("Stephanie", 60.00)
+        self.guest_4 = Guest("Eli", 65.50)
+        self.guest_5 = Guest("Kevin", 55.00)
+        self.guest_6 = Guest("Annika", 58.50)
         self.song_1 = Song("I Will Survive")
            
     def test_room_has_number(self):
@@ -25,6 +25,10 @@ class TestRoom(unittest.TestCase):
         self.room_1.check_in_guest(self.guest_1)
         self.room_1.check_in_guest(self.guest_2)
         self.assertEqual(2, self.room_1.guest_count())
+
+    def test_wallet_decremented_on_check_in(self):
+        self.room_1.check_in_guest(self.guest_3)
+        self.assertEqual(50.00,self.guest_3.wallet)
 
     def test_check_in_guest_no_capacity(self):
         self.room_1.check_in_guest(self.guest_1)
