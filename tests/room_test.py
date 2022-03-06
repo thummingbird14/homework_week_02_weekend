@@ -38,6 +38,7 @@ class TestRoom(unittest.TestCase):
         self.room_1.check_in_guest(self.guest_5)
         self.room_1.check_in_guest(self.guest_6)
         self.assertEqual(5, self.room_1.guest_count())
+        self.assertEqual(58.50, self.guest_6.wallet)
 
     def test_can_check_out_guest(self):
         self.room_1.check_in_guest(self.guest_1)
